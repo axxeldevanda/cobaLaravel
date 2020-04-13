@@ -18,7 +18,6 @@ class CreateStudentsTable extends Migration
             $table->string('nama');
             $table->char('nrp', 9);
             $table->string('email')->unique();
-
             $table->string('jurusan');
             $table->timestamps();
         });

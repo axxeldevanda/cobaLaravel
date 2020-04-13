@@ -13,6 +13,11 @@
                 {{ session('status') }}
             </div>
             @endif
+            @if (session('statusError'))
+            <div class="alert alert-danger">
+                {{ session('statusError') }}
+            </div>
+            @endif
             <ul class="list-group">
                 @foreach ($students as $s)
                 <li class="list-group-item d-flex justify-content-between align-items-center">

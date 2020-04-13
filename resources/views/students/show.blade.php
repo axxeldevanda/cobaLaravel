@@ -13,8 +13,14 @@
                     <h6 class="card-subtitle mb-2 text-muted">{{$student->nrp}}</h6>
                     <p class="card-text">{{$student->email}}</p>
                     <p class="card-text">{{$student->jurusan}}</p>
-                    <button type="submit" class="btn btn-primary">Edit</button>
-                    <button type="submit" class="btn btn-danger">Delete</button>
+
+                    <a href="{{$student->id}}/edit" class="btn btn-primary">Edit</a>
+                    <form action="{{$student->id}}" method="post">
+                        @method('delete')
+                        @csrf
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Hapus?');">Delete</button>
+                    </form>
+
                     <a href="/students" class="btn btn-success">Kembali</a>
                 </div>
             </div>
